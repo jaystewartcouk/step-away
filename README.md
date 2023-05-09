@@ -10,8 +10,7 @@ To be run on the command line: `python main.py`.
 ## Testing
 This has only been tested Ubuntu 22.04.2 LTS.
 
-## Contributing
-:exploding_head: Ideas: :exploding_head:
+## :exploding_head: Contribution Ideas :exploding_head:
 1. As a screen addict, I want configure my break times so that I don't go square eyed.
 2. As a screen addict, I want computer ergonomic exercises so that I can work longer hours.
 3. As a screen addict, I want to overide break times so that I can take a break when needed.
