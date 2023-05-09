@@ -1,4 +1,4 @@
-# When True makes 5 second short break every 1 minute
+# Debug mode: 5 second break every 1 minute
 debug_mode = False
 short_break_freq_mins = 10
 short_break_len_secs = 20
