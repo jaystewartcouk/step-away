@@ -16,4 +16,5 @@ This has only been tested Ubuntu 22.04.2 LTS.
 2. As a screen addict, I want computer ergonomic exercises so that I can work longer hours.
 3. As a screen addict, I want to overide break times so that I can take a break when needed.
 
-"Wind Chime, Gamelan Gong, A.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+## Credits
+"gong.wav" by InspectorJ ([www.jshaw.co.uk](https://www.jshaw.co.uk)) of [Freesound.org](http://freesound.org/)
