@@ -2,7 +2,8 @@
 A simple screen break program. "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective. This program shows you a blank screen to reminds you to take breaks.
 
 ## Warnings
-This is hardcoded to 20 second breaks every 10 minutes and 5 minute breaks every 30 minutes.
+- This is an MVP.
+- This is hardcoded to 20 second breaks every 10 minutes and 5 minute breaks every 30 minutes.
 
 ## Requirements
 `pip install pygame`
