@@ -4,6 +4,9 @@ A simple screen break program. "Step away" typically means to physically remove 
 ## Warnings
 This is hardcoded to 20 second breaks every 10 minutes and 5 minute breaks every 30 minutes.
 
+## Requirements
+`pip install pygame`
+
 ## Instructions
 To be run on the command line: `python main.py`.
 
