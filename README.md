@@ -8,14 +8,14 @@ This is hardcoded to 20 second breaks every 10 minutes and 5 minute breaks every
 `pip install pygame`
 
 ## Instructions
-To be run on the command line: `python main.py`.
+`python main.py`
 
 ## Testing
-This has only been tested Ubuntu 22.04.2 LTS.
+Only tested on Ubuntu 22.04.2 LTS.
 
 ## :exploding_head: Contribution Ideas :exploding_head:
 1. As a screen addict, I want configure my break times so that I don't go square eyed.
-2. As a screen addict, I want computer ergonomic exercises so that I can work longer hours.
+2. As a screen addict, I want computer ergonomic exercises displayed during breaks so that I can work longer hours.
 3. As a screen addict, I want to overide break times so that I can take a break when needed.
 
 ## Credits
