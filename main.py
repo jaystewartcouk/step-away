@@ -30,7 +30,7 @@ class StepAway:
         logging.info("Welcome to Step Away!")
 
         parser = argparse.ArgumentParser()
-        parser.add_argument("--break_now", help="Start with a break in min")
+        parser.add_argument("--take_break", help="Start with a break in minutes")
         self.args = parser.parse_args()
 
     def take_break(self, s):
@@ -42,7 +42,7 @@ class StepAway:
         self.show_message(screen)
         pygame.display.update()
         logging.info(
-            f"Taking a {str(s if s < 60 else s/60)} {'second' if s < 60 else 'minute'} break"
+            f"Taking a {str(s if s < 60 else int(s/60))} {'second' if s < 60 else 'minute'} break"
         )
         time.sleep(s)
         pygame.quit()
@@ -81,8 +81,8 @@ class StepAway:
         subprocess.call(["playerctl", "pause"])
 
     def run(self):
-        if self.args.break_now:
-            self.take_break(int(self.args.break_now) * 60)
+        if self.args.take_break:
+            self.take_break(int(self.args.take_break) * 60)
 
         count = self.short_freq_min * 60
         while True:
