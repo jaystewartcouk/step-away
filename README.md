@@ -31,7 +31,6 @@ Only tested on Ubuntu 22.04.2 LTS.
 
 ## :exploding_head: Contribution Ideas :exploding_head:
 1. As a screen addict, I want configure my break times so that I don't go square eyed.
-2. As a screen addict, I want computer ergonomic exercises displayed during breaks so that I can work longer hours.
 
 ## Credits
 - "gong.wav" by InspectorJ ([www.jshaw.co.uk](https://www.jshaw.co.uk)) of [Freesound.org](http://freesound.org/)
