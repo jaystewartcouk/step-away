@@ -6,7 +6,13 @@ A simple screen break program. "Step away" typically means to physically remove 
 - This is hardcoded to 20 second breaks every 10 minutes and 5 minute breaks every 30 minutes.
 
 ## Requirements
+Pygame is used for the break screen
+
 `pip install pygame`
+
+Playerctl is used to pause media
+
+`sudo apt install playerctl`
 
 ## Instructions
 `python main.py`
@@ -20,4 +26,6 @@ Only tested on Ubuntu 22.04.2 LTS.
 3. As a screen addict, I want to overide break times so that I can take a break when needed.
 
 ## Credits
-"gong.wav" by InspectorJ ([www.jshaw.co.uk](https://www.jshaw.co.uk)) of [Freesound.org](http://freesound.org/)
+- "gong.wav" by InspectorJ ([www.jshaw.co.uk](https://www.jshaw.co.uk)) of [Freesound.org](http://freesound.org/)
+- Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
+- Inspired by [Safe Eyes](https://github.com/slgobinath/SafeEyes)
