@@ -18,34 +18,30 @@ tqdm is used to quickly see how (long) until next break
 
 `pip install tqdm`
 
+`pip install python-dotenv`
+
 ## Usage
 `python main.py`
 
 ```
-usage: main.py [-h] [--short_break_freq_min SHORT_BREAK_FREQ_MIN] [--short_break_length_sec SHORT_BREAK_LENGTH_SEC] [--long_break_freq_min LONG_BREAK_FREQ_MIN]
-               [--long_break_length_min LONG_BREAK_LENGTH_MIN] [--break_now BREAK_NOW]
+usage: main.py [-h] [--short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUTES] [--short_break_length_seconds SHORT_BREAK_LENGTH_SECONDS]
+               [--long_break_frequency_minutes LONG_BREAK_FREQUENCY_MINUTES] [--long_break_length_minutes LONG_BREAK_LENGTH_MINUTES] [--delay DELAY]
 
 options:
   -h, --help            show this help message and exit
-  --short_break_freq_min SHORT_BREAK_FREQ_MIN
-                        Short break frequency in minutes
-  --short_break_length_sec SHORT_BREAK_LENGTH_SEC
-                        Short break length in minutes
-  --long_break_freq_min LONG_BREAK_FREQ_MIN
-                        Long break frequency in minutes
-  --long_break_length_min LONG_BREAK_LENGTH_MIN
-                        Long break length in minutes
-  --break_now BREAK_NOW
-                        Start with a break in minutes
+  --short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUTES
+  --short_break_length_seconds SHORT_BREAK_LENGTH_SECONDS
+  --long_break_frequency_minutes LONG_BREAK_FREQUENCY_MINUTES
+  --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
+  --delay DELAY
 ```
 
 ## Testing
 Only tested on Ubuntu 22.04.2 LTS.
 
 ## :exploding_head: Contribution Ideas :exploding_head:
-1. Create a configuration class to store and manage the configuration settings
-2. Create a testing plan
-3. Create a system tray icon
+1. Create a testing plan
+2. Create a system tray icon
 
 ## Credits
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
