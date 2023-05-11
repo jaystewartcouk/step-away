@@ -49,3 +49,26 @@ Use command line arguments above or `cp .env.example .env`.
 
 ## License
 https://opensource.org/license/mit/
+
+## Break screen exercises
+```
+[
+    "Neck Rotation: Slowly rotate your head as far as comfortable to the right, then left.",
+    "Shoulder Rotation: Circle your shoulders, then reverse directions.",
+    "Head Side to Side: Bend your neck so left ear approaches left shoulder, then repeat for right.",
+    "Chin Tuck: Slide your chin inward, without bending your neck up or down.",
+    "Shoulder Blade Retraction: Pull your shoulders down and back.",
+    "Shrug: Slowly raise your shoulders toward ears and hold for a few seconds.",
+    "Shoulder Squeeze: Raise your arms in front of body, with elbows bent and thumbs up. Pull elbows back, squeezing shoulder blades together.",
+    "Stretch Up: Sit up straight and imagine a cable attached to the top of your head. Gradually stretch up, then relax.",
+    "Arm Relaxation: Drop your arms and hands to your sides. Gently shake them for a few seconds.",
+    "Arm Rotation: Raise your arms in front of your body. Rotate arms so palms face up, then rotate so backs of hands face each other.",
+    "Wrist Flex: With your elbows on desk, gently use left hand to bend right hand back toward forearm. Repeat on other side.",
+    "Finger Fan: Spread your fingers as far apart as possible, hold, then clench fists, then release.",
+    "Toe Curl: Flex toes up, then curl toes under. Release.",
+    "Foot Rotation: Circle foot slowly from the ankle, then reverse.",
+    "Eye Rolls: Roll your eyes clockwise then counterclockwise briefly.",
+    "Palm Eyes: Without touching your eyes, cup hands lightly over eyes for 30 seconds to rest them from light.",
+    "Look Away: Exercise your eyes by periodically looking away from your computer to focus on distant objects."
+]
+```
