@@ -1,10 +1,8 @@
 # :radioactive: Step Away!
-A simple screen break program. "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective. This program shows you a blank screen with an exercise to remind you to take breaks and move.
+A simple screen break program. "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective. This program shows you a blank screen with a physical exercise to remind you to take breaks and move.
 
 ## :warning: Warnings
 - Only tested on Ubuntu 22.04.2 LTS
-- This is a MVP / WIP
-- This is hardcoded to 20 second breaks every 10 minutes and 5 minute breaks every 30 minutes.
 
 ## :mag: Requirements
 pygame is used for the break screen
@@ -36,11 +34,14 @@ options:
   --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
   --delay DELAY
 ```
+## Configuration
+Use command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
-* [ ] Cross-platform tray icon and popdown menu
+* [x] Cross-platform system tray icon and controls
 * [ ] Write tests
 * [ ] Add linters and static analyzers
+* [ ] Set up CI
 
 ## :green_heart: Credits
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
