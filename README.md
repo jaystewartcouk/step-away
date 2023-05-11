@@ -1,6 +1,11 @@
 # :radioactive: Step Away!
 A simple screen break program. "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective. This program shows you a blank screen with a physical exercise to remind you to take breaks and move.
 
+## Features
+- Configure a short break interval and duration
+- Configure a long break interval and duration
+- System tray icon controls (Pause, Resume, Skip, Skip to long, Stop)
+
 ## :warning: Warnings
 - Only tested on Ubuntu 22.04.2 LTS
 
