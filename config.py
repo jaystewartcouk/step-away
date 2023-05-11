@@ -34,28 +34,28 @@ class Config:
 
         if args.short_break_frequency_minutes:
             self.SHORT_BREAK_FREQUENCY_MINUTES = int(args.short_break_frequency_minutes)
-        elif int(os.environ.get("SHORT_BREAK_FREQUENCY_MINUTES")):
+        elif os.environ.get("SHORT_BREAK_FREQUENCY_MINUTES"):
             self.SHORT_BREAK_FREQUENCY_MINUTES = int(
                 os.environ.get("SHORT_BREAK_FREQUENCY_MINUTES")
             )
 
         if args.short_break_length_seconds:
             self.SHORT_BREAK_LENGTH_SECONDS = int(args.short_break_length_seconds)
-        elif int(os.environ.get("SHORT_BREAK_LENGTH_SECONDS")):
+        elif os.environ.get("SHORT_BREAK_LENGTH_SECONDS"):
             self.SHORT_BREAK_LENGTH_SECONDS = int(
                 os.environ.get("SHORT_BREAK_LENGTH_SECONDS")
             )
 
         if args.long_break_frequency_minutes:
             self.LONG_BREAK_FREQUENCY_MINUTES = int(args.long_break_frequency_minutes)
-        elif int(os.environ.get("LONG_BREAK_FREQUENCY_MINUTES")):
+        elif os.environ.get("LONG_BREAK_FREQUENCY_MINUTES"):
             self.LONG_BREAK_FREQUENCY_MINUTES = int(
                 os.environ.get("LONG_BREAK_FREQUENCY_MINUTES")
             )
 
         if args.long_break_length_minutes:
             self.LONG_BREAK_LENGTH_MINUTES = int(args.long_break_length_minutes)
-        elif int(os.environ.get("LONG_BREAK_LENGTH_MINUTES")):
+        elif os.environ.get("LONG_BREAK_LENGTH_MINUTES"):
             self.LONG_BREAK_LENGTH_MINUTES = int(
                 os.environ.get("LONG_BREAK_LENGTH_MINUTES")
             )
