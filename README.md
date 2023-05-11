@@ -34,13 +34,17 @@ usage: main.py [-h] [--short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUT
 options:
   -h, --help            show this help message and exit
   --short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUTES
+                        (Needs to go evenly into long_break_frequency_minutes)
   --short_break_length_seconds SHORT_BREAK_LENGTH_SECONDS
   --long_break_frequency_minutes LONG_BREAK_FREQUENCY_MINUTES
+                        (Needs to be a multiple of short_break_frequency_minutes)
   --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
   --delay DELAY
 ```
 ## :high_brightness: Configuration
 Use command line arguments above or `cp .env.example .env`.
+:warning: SHORT_BREAK_FREQUENCY_MINUTES needs to go evenly into LONG_BREAK_FREQUENCY_MINUTES
+:warning: LONG_BREAK_FREQUENCY_MINUTES needs to be a multiple of SHORT_BREAK_FREQUENCY_MINUTES
 
 ## :bulb: Roadmap
 * [x] Cross-platform system tray icon and controls
