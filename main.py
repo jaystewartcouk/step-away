@@ -66,7 +66,7 @@ class StepAway(Base):
                     is_long_break = True
                     self.tray.skip_to_long_flag = False
                 else:
-                    # true every multiple of LONG_BREAK_FREQUENCY_SECONDS
+                    # true when seconds_worked is a multiple of LONG_BREAK_FREQUENCY_SECONDS
                     is_long_break = (
                         seconds_worked % self.config.LONG_BREAK_FREQUENCY_SECONDS == 0
                     )
