@@ -72,3 +72,8 @@ https://opensource.org/license/mit/
     "Look Away: Exercise your eyes by periodically looking away from your computer to focus on distant objects."
 ]
 ```
+
+## :camera: Screenshots
+![alt text](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/tray.png?raw=true)
+![alt text](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/window.png?raw=true)
+
