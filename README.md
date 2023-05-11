@@ -37,10 +37,14 @@ options:
   --delay DELAY
 ```
 
-## :bulb: Contribution Ideas
-1. Create a testing plan
-2. Create a system tray icon
+## :bulb: Roadmap
+* [ ] Cross-platform tray icon and popdown menu
+* [ ] Write tests
+* [ ] Add linters and static analyzers
 
 ## :green_heart: Credits
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
 - Inspired by [Safe Eyes](https://github.com/slgobinath/SafeEyes)
+
+## License
+https://opensource.org/license/mit/
