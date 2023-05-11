@@ -1,5 +1,7 @@
 # :radioactive: Step Away!
-A simple screen break program. "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective. This program shows you a blank screen with a physical exercise to remind you to take breaks and move.
+"Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective.
+
+A simple screen break program which shows you a blank screen with a physical exercise to remind you to take breaks and move.
 
 ## Features
 - Configure a short break interval and duration
@@ -22,13 +24,19 @@ usage: main.py [-h] [--short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUT
 options:
   -h, --help            show this help message and exit
   --short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUTES
+                        (Needs to go evenly into long_break_frequency_minutes)
   --short_break_length_seconds SHORT_BREAK_LENGTH_SECONDS
   --long_break_frequency_minutes LONG_BREAK_FREQUENCY_MINUTES
+                        (Needs to be a multiple of short_break_frequency_minutes)
   --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
   --delay DELAY
 ```
 ## :high_brightness: Configuration
-Use command line arguments above or `cp .env.example .env`.
+Please use the command line arguments above or `cp .env.example .env`.
+
+:warning: SHORT_BREAK_FREQUENCY_MINUTES needs to go evenly into LONG_BREAK_FREQUENCY_MINUTES
+
+:warning: LONG_BREAK_FREQUENCY_MINUTES needs to be a multiple of SHORT_BREAK_FREQUENCY_MINUTES
 
 ## :bulb: Roadmap
 * [x] Cross-platform system tray icon and controls
