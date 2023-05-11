@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/jaystewartcouk/step-away.svg?branch=main)](https://app.travis-ci.com/jaystewartcouk/step-away)
+
 # :radioactive: Step Away!
 "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective.
 
