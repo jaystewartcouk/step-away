@@ -14,9 +14,15 @@ class Config:
     def __init__(self) -> None:
         parser = argparse.ArgumentParser()
 
-        parser.add_argument("--short_break_frequency_minutes")
+        parser.add_argument(
+            "--short_break_frequency_minutes",
+            help="(Needs to go evenly into long_break_frequency_minutes)",
+        )
         parser.add_argument("--short_break_length_seconds")
-        parser.add_argument("--long_break_frequency_minutes")
+        parser.add_argument(
+            "--long_break_frequency_minutes",
+            help="(Needs to be a multiple of short_break_frequency_minutes)",
+        )
         parser.add_argument("--long_break_length_minutes")
         parser.add_argument("--delay")
 
@@ -54,3 +60,8 @@ class Config:
         self.WORK_DURATION = self.SHORT_BREAK_FREQUENCY_MINUTES * 60
         self.LONG_BREAK_LENGTH_SECONDS = self.LONG_BREAK_LENGTH_MINUTES * 60
         self.LONG_BREAK_FREQUENCY_SECONDS = self.LONG_BREAK_FREQUENCY_MINUTES * 60
+
+        if self.LONG_BREAK_LENGTH_MINUTES % self.SHORT_BREAK_FREQUENCY_MINUTES != 0:
+            print(
+                "LONG_BREAK_LENGTH_MINUTES should be a multiple of SHORT_BREAK_FREQUENCY_MINUTES"
+            )
