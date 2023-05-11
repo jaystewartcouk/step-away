@@ -12,6 +12,7 @@ import time
 
 class StepAway:
     current_break_type = None
+    current_break_duration = None
     config = None
 
     def __init__(self) -> None:
@@ -28,10 +29,11 @@ class StepAway:
     def play_sound(self):
         os.system("aplay sound.wav")
 
-    def get_text(self, seconds):
-        text = str(seconds) if seconds < 60 else str(int(seconds / 60))
+    def get_text(self):
+        duration = self.current_break_duration
+        text = str(duration) if duration < 60 else str(int(duration / 60))
         text += " "
-        text += "second" if seconds < 60 else "minute"
+        text += "second" if duration < 60 else "minute"
         text += ": "
         text += self.get_random_exercise()
         return text
@@ -42,11 +44,12 @@ class StepAway:
         random.seed(time.time())
         return random.choice(exercises)
 
-    def take_break(self, seconds):
+    def take_break(self, duration):
+        self.current_break_duration = duration
         self.pause_player()
-        Window.open(self.get_text(seconds))
+        Window.open(self.get_text())
         self.play_sound()
-        self.show_pbar(seconds)
+        self.show_pbar(duration)
         Window.close()
         self.play_sound()
 
