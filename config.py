@@ -9,7 +9,6 @@ class Config:
     SHORT_BREAK_LENGTH_SECONDS = 5
     LONG_BREAK_FREQUENCY_MINUTES = 30
     LONG_BREAK_LENGTH_MINUTES = 5
-    LONG_BREAK_LENGTH_SECONDS = None
 
     def __init__(self) -> None:
         parser = argparse.ArgumentParser()
