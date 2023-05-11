@@ -34,7 +34,7 @@ options:
   --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
   --delay DELAY
 ```
-## Configuration
+## :high_brightness: Configuration
 Use command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
@@ -47,10 +47,10 @@ Use command line arguments above or `cp .env.example .env`.
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
 - Inspired by [Safe Eyes](https://github.com/slgobinath/SafeEyes)
 
-## License
+## :scroll: License
 https://opensource.org/license/mit/
 
-## Break screen exercises
+## :cartwheeling: Break screen exercises
 ```
 [
     "Neck Rotation: Slowly rotate your head as far as comfortable to the right, then left.",
