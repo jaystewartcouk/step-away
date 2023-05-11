@@ -1,0 +1,4 @@
+tqdm
+pygame
+pystray
+python-dotenv

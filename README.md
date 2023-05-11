@@ -10,19 +10,7 @@ A simple screen break program. "Step away" typically means to physically remove 
 - Only tested on Ubuntu 22.04.2 LTS
 
 ## :mag: Requirements
-pygame is used for the break screen
-
-`pip install pygame`
-
-playerctl is used to pause media
-
-`sudo apt install playerctl`
-
-tqdm is used to quickly see how long until next break
-
-`pip install tqdm`
-
-`pip install python-dotenv`
+`pip install -r requirements.txt`
 
 ## :sunglasses: Usage
 `python main.py`
