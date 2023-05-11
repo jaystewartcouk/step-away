@@ -60,7 +60,7 @@ class StepAway:
                 time.sleep(1)
 
     def run(self):
-        if self.config.DELAY:
+        if self.config.DELAY > 0:
             self.take_break(self.config.DELAY)
 
         break_stopwatch = 0
