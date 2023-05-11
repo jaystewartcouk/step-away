@@ -1,64 +1,51 @@
-from config import Config
-from window import Window
-import logging
 import os
 import time
-import subprocess
 from tqdm import tqdm
-import json
-import random
-import time
+from base import Base
+from tray import Tray
+from window import Window
 
 
-class StepAway:
-    current_break_type = None
-    current_break_duration = None
-    config = None
+class StepAway(Base):
+    window = None
+    tray = None
 
     def __init__(self) -> None:
-        logging.basicConfig(
-            level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-        )
-        logging.info("Welcome to Step Away!")
-        self.config = Config()
+        super().__init__()
+        self.window = Window()
+        self.tray = Tray()
 
-    def pause_player(self):
-        # True players only: vlc, mpv, RhythmBox, web browsers, cmus, mpd, spotify..
-        subprocess.call(["playerctl", "pause"])
+    def get_file_path(self, file):
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(current_dir, file)
+        return file_path
 
     def play_sound(self):
-        os.system("aplay sound.wav")
-
-    def get_text(self):
-        duration = self.current_break_duration
-        text = str(duration) if duration < 60 else str(int(duration / 60))
-        text += " "
-        text += "second" if duration < 60 else "minute"
-        text += ": "
-        text += self.get_random_exercise()
-        return text
-
-    def get_random_exercise(self):
-        with open("exercises.json", "r") as f:
-            exercises = json.load(f)
-        random.seed(time.time())
-        return random.choice(exercises)
+        os.system(f"aplay {self.get_file_path('sound.wav')}")
 
     def take_break(self, duration):
-        self.current_break_duration = duration
-        self.pause_player()
-        Window.open(self.get_text())
+        self.pause_players()
+        self.window.current_break_duration = duration
+        self.window.open()
         self.play_sound()
-        self.show_pbar(duration)
-        Window.close()
-        self.play_sound()
+        self.show_progress_bar(duration)
+        if self.tray.stop_flag is not True:
+            self.window.close()
+            self.play_sound()
 
-    def show_pbar(self, seconds):
+    def show_progress_bar(self, seconds):
         # create a tqdm progress bar with the total duration
         with tqdm(total=seconds) as pbar:
             # loop for the duration of the progress bar
             for i in range(seconds):
                 # update the progress bar every second
+                while self.tray.pause_flag is True:
+                    pass
+                if self.tray.stop_flag is True:
+                    break
+                if self.tray.skip_flag is True:
+                    self.tray.skip_flag = False
+                    break
                 pbar.update(1)
                 time.sleep(1)
 
@@ -66,21 +53,30 @@ class StepAway:
         if self.config.DELAY > 0:
             self.take_break(self.config.DELAY)
 
-        break_stopwatch = 0
-        while True:
-            self.show_pbar(self.config.SHORT_BREAK_FREQUENCY_SECONDS)
-            break_stopwatch += self.config.SHORT_BREAK_FREQUENCY_SECONDS
-            is_long_break = (
-                break_stopwatch % self.config.LONG_BREAK_FREQUENCY_SECONDS == 0
-            )
-            self.current_break_type = "long" if is_long_break else "short"
-            logging.info(f"Taking a {self.current_break_type} break")
-            self.take_break(
-                self.config.LONG_BREAK_LENGTH_SECONDS
-                if is_long_break
-                else self.config.SHORT_BREAK_LENGTH_SECONDS
-            )
-            break_stopwatch += self.config.SHORT_BREAK_FREQUENCY_SECONDS
+        seconds_worked = 0
+        while True and self.tray.stop_flag is False:
+            self.log.info(f"Seconds worked: {seconds_worked}")
+
+            # Work time
+            self.show_progress_bar(self.config.WORK_DURATION)
+            seconds_worked += self.config.WORK_DURATION
+
+            if self.tray.stop_flag is False:
+                if self.tray.skip_to_long_flag is True:
+                    is_long_break = True
+                    self.tray.skip_to_long_flag = False
+                else:
+                    # true every multiple of LONG_BREAK_FREQUENCY_SECONDS
+                    is_long_break = (
+                        seconds_worked % self.config.LONG_BREAK_FREQUENCY_SECONDS == 0
+                    )
+
+                # Break time
+                self.take_break(
+                    self.config.LONG_BREAK_LENGTH_SECONDS
+                    if is_long_break
+                    else self.config.SHORT_BREAK_LENGTH_SECONDS
+                )
 
 
 def main():
