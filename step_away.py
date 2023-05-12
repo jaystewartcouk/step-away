@@ -8,6 +8,7 @@ from window import Window
 import subprocess
 import platform
 import os
+from playsound import playsound
 
 
 class StepAway(Base):
@@ -26,7 +27,7 @@ class StepAway(Base):
 
     def play_sound(self):
         if "TRAVIS" not in os.environ:
-            os.system(f"aplay {self.get_file_path('sound.wav')}")
+            playsound(self.get_file_path("sound.wav"))
 
     def pause_players(self):
         # True players only: vlc, mpv, RhythmBox, web browsers, cmus, mpd, spotify..
