@@ -3,26 +3,35 @@
 # :radioactive: Step Away!
 "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective.
 
-A simple screen break program which shows you a blank screen with a physical exercise to remind you to take breaks and move.
+This is a simple screen break program that shows you a blank screen with a physical exercise to remind you to take breaks and move.
 
-## Features
+## :rocket: Features
 - Configure a short break interval and duration
 - Configure a long break interval and duration
 - System tray icon controls (Pause, Resume, Skip, Skip to long, Stop)
 
-## :warning: Tested on
+## :warning: Works on
 - Ubuntu 22.04.2 LTS
 - Windows 10
 
-## :mag: Requirements
-`pip install -r requirements.txt`
+## :mag: Setup
+
+### Ubuntu
+```
+mkdir -p ~/code && cd ~/code
+git clone git@github.com:jaystewartcouk/step-away.git
+cd step-away
+pip install -r requirements.txt
+cp step_away.desktop ~/.local/share/applications/step_away.desktop
+sed -i 's#/path/to/your/#'"$HOME/code/"'#g' ~/.local/share/applications/step_away.desktop
+```
 
 ## :sunglasses: Usage
-`python main.py`
+`python step_away.py`
 
 ```
-usage: main.py [-h] [--short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUTES] [--short_break_length_seconds SHORT_BREAK_LENGTH_SECONDS]
-               [--long_break_frequency_minutes LONG_BREAK_FREQUENCY_MINUTES] [--long_break_length_minutes LONG_BREAK_LENGTH_MINUTES] [--delay DELAY]
+usage: step_away.py [-h] [--short_break_frequency_minutes SHORT_BREAK_FREQUENCY_MINUTES] [--short_break_length_seconds SHORT_BREAK_LENGTH_SECONDS]
+                    [--long_break_frequency_minutes LONG_BREAK_FREQUENCY_MINUTES] [--long_break_length_minutes LONG_BREAK_LENGTH_MINUTES] [--delay DELAY]
 
 options:
   -h, --help            show this help message and exit
@@ -34,12 +43,9 @@ options:
   --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
   --delay DELAY
 ```
+
 ## :high_brightness: Configuration
 Please use the command line arguments above or `cp .env.example .env`.
-
-:warning: SHORT_BREAK_FREQUENCY_MINUTES needs to go evenly into LONG_BREAK_FREQUENCY_MINUTES
-
-:warning: LONG_BREAK_FREQUENCY_MINUTES needs to be a multiple of SHORT_BREAK_FREQUENCY_MINUTES
 
 ## :bulb: Roadmap
 * [ ] Write tests
