@@ -9,6 +9,7 @@ This is a simple screen break program that shows you a blank screen with a physi
 - Configure a short break interval and duration
 - Configure a long break interval and duration
 - System tray icon controls (Pause, Resume, Skip, Skip to long, Stop)
+- Add Ubuntu desktop icon (See [Setup](#setup-ubuntu))
 
 ## :warning: Works on
 - Ubuntu 22.04.2 LTS
@@ -16,6 +17,7 @@ This is a simple screen break program that shows you a blank screen with a physi
 
 ## :mag: Setup
 
+<a name="setup-ubuntu"></a>
 ### Ubuntu
 ```
 mkdir -p ~/code && cd ~/code
