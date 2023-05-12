@@ -85,6 +85,6 @@ https://opensource.org/license/mit/
 ```
 
 ## :camera: Screenshots
-![alt text](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/tray.png?raw=true)
-![alt text](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/window.png?raw=true)
+![Tray screenshot](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/desktop-icon.png?raw=true) ![Desktop screenshot](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/tray.png?raw=true)
+![Window screenshot](https://github.com/jaystewartcouk/step-away/blob/main/screenshots/window.png?raw=true)
 
