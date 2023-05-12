@@ -7,7 +7,6 @@ from tray import Tray
 from window import Window
 import subprocess
 import platform
-import os
 
 
 class StepAway(Base):
