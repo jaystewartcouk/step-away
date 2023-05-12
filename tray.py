@@ -1,7 +1,9 @@
-import pystray
 from PIL import Image
 import threading
 import os
+
+if "TRAVIS" not in os.environ:
+    import pystray
 
 
 class Tray:
@@ -14,7 +16,9 @@ class Tray:
 
     def __init__(self) -> None:
         super().__init__()
-        self.run()
+
+        if "TRAVIS" not in os.environ:
+            self.run()
 
     def pause(self, icon, item):
         self.pause_flag = True

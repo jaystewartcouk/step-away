@@ -1,9 +1,13 @@
+#!/usr/bin/env python3
 import os
 import time
 from tqdm import tqdm
 from base import Base
 from tray import Tray
 from window import Window
+import subprocess
+import platform
+import os
 
 
 class StepAway(Base):
@@ -21,12 +25,19 @@ class StepAway(Base):
         return file_path
 
     def play_sound(self):
-        os.system(f"aplay {self.get_file_path('sound.wav')}")
+        if "TRAVIS" not in os.environ:
+            os.system(f"aplay {self.get_file_path('sound.wav')}")
+
+    def pause_players(self):
+        # True players only: vlc, mpv, RhythmBox, web browsers, cmus, mpd, spotify..
+        if platform.system() == "Linux" and "TRAVIS" not in os.environ:
+            subprocess.call(["playerctl", "pause"])
 
     def take_break(self, duration):
         self.pause_players()
         self.window.current_break_duration = duration
-        self.window.open()
+        if "TRAVIS" not in os.environ:
+            self.window.open()
         self.play_sound()
         self.show_progress_bar(duration)
         if self.tray.stop_flag is not True:

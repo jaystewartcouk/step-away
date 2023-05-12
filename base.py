@@ -1,6 +1,5 @@
 import logging
 from config import Config
-import subprocess
 
 
 class Base:
@@ -16,7 +15,3 @@ class Base:
         )
         self.log.info("Welcome to Step Away!")
         self.config = Config()
-
-    def pause_players(self):
-        # True players only: vlc, mpv, RhythmBox, web browsers, cmus, mpd, spotify..
-        subprocess.call(["playerctl", "pause"])

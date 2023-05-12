@@ -44,4 +44,5 @@ class Window:
         pygame.display.flip()
 
     def close(self):
-        pygame.quit()
+        if "TRAVIS" not in os.environ:
+            pygame.quit()
