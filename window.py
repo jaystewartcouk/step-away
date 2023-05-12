@@ -11,8 +11,8 @@ class Window:
         file_path = os.path.join(current_dir, file)
         return file_path
 
-    def play_sound(self, pygame, file):
-        sound = pygame.mixer.Sound(self.get_file_path(file))
+    def play_sound(self, pygame):
+        sound = pygame.mixer.Sound(self.get_file_path("sound.wav"))
         sound.play()
         pygame.time.wait(int(sound.get_length() * 1000))
 
@@ -47,8 +47,8 @@ class Window:
         screen.blit(text_surface, (x, y))
         # update the display
         pygame.display.flip()
-        self.play_sound(pygame, "assets/woodpecker.wav")
+        self.play_sound(pygame)
 
     def close(self):
-        self.play_sound(pygame, "assets/bird-whistling.wav")
+        self.play_sound(pygame)
         pygame.quit()

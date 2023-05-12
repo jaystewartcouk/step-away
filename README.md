@@ -56,7 +56,6 @@ Please use the command line arguments above or `cp .env.example .env`.
 * [ ] Add next break time in tray
 
 ## :green_heart: Credits
-- wooderpecker.wav and bird-whistling.wav by InspectorJ (https://www.jshaw.co.uk/) of https://freesound.org/
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
 - Inspired by [Safe Eyes](https://github.com/slgobinath/SafeEyes)
 
