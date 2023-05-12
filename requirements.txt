@@ -2,4 +2,3 @@ tqdm
 pygame
 pystray
 python-dotenv
-playsound

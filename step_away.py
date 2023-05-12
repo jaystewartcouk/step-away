@@ -8,7 +8,6 @@ from window import Window
 import subprocess
 import platform
 import os
-from playsound import playsound
 
 
 class StepAway(Base):
@@ -20,10 +19,6 @@ class StepAway(Base):
         self.window = Window()
         self.tray = Tray()
 
-    def play_sound(self):
-        if "TRAVIS" not in os.environ:
-            playsound("assets/bird-whistling.wav")
-
     def pause_players(self):
         # True players only: vlc, mpv, RhythmBox, web browsers, cmus, mpd, spotify..
         if platform.system() == "Linux" and "TRAVIS" not in os.environ:
@@ -34,11 +29,9 @@ class StepAway(Base):
         self.window.current_break_duration = duration
         if "TRAVIS" not in os.environ:
             self.window.open()
-        self.play_sound()
         self.show_progress_bar(duration)
         if self.tray.stop_flag is not True:
             self.window.close()
-            self.play_sound()
 
     def show_progress_bar(self, seconds):
         # create a tqdm progress bar with the total duration
