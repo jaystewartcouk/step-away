@@ -15,6 +15,7 @@ A simple screen break program which shows you a blank screen with a physical exe
 
 ## :mag: Requirements
 `pip install -r requirements.txt`
+`sudo apt install playerctl`
 
 ## :sunglasses: Usage
 `python main.py`
