@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Step Away
+Exec=/usr/bin/python3 /path/to/your/step-away/step_away.py
+Icon=/path/to/your/step-away/icon.png
