@@ -52,6 +52,7 @@ Please use the command line arguments above or `cp .env.example .env`.
 ## :bulb: Roadmap
 * [ ] Write tests
 * [ ] Add linters and static analyzers
+* [ ] Add settings window
 
 ## :green_heart: Credits
 - wooderpecker.wav and bird-whistling.wav by InspectorJ (https://www.jshaw.co.uk/) of https://freesound.org/
