@@ -20,14 +20,9 @@ class StepAway(Base):
         self.window = Window()
         self.tray = Tray()
 
-    def get_file_path(self, file):
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        file_path = os.path.join(current_dir, file)
-        return file_path
-
     def play_sound(self):
         if "TRAVIS" not in os.environ:
-            playsound(self.get_file_path("sound.wav"))
+            playsound("assets/bird-whistling.wav")
 
     def pause_players(self):
         # True players only: vlc, mpv, RhythmBox, web browsers, cmus, mpd, spotify..
