@@ -6,18 +6,25 @@ import os
 
 
 class Window:
+    pyg = pygame
+    exercise_file = "exercises.json"
+    sound_file = "sound.wav"
+
+    def __init__(self) -> None:
+        self.pyg.init()
+
     def get_file_path(self, file):
         current_dir = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(current_dir, file)
         return file_path
 
-    def play_sound(self, pygame):
-        sound = pygame.mixer.Sound(self.get_file_path("sound.wav"))
+    def play_sound(self):
+        sound = self.pyg.mixer.Sound(self.get_file_path(self.sound_file))
         sound.play()
-        pygame.time.wait(int(sound.get_length() * 1000))
+        self.pyg.time.wait(int(sound.get_length() * 1000))
 
     def get_random_exercise(self):
-        with open(f"{self.get_file_path('exercises.json')}", "r") as f:
+        with open(self.get_file_path(self.exercise_file), "r") as f:
             exercises = json.load(f)
         random.seed(time.time())
         return random.choice(exercises)
@@ -32,11 +39,13 @@ class Window:
         return text
 
     def open(self):
-        pygame.init()
-        screen_size = pygame.display.Info().current_w, pygame.display.Info().current_h
-        screen = pygame.display.set_mode(screen_size, pygame.FULLSCREEN)
+        screen_size = (
+            self.pyg.display.Info().current_w,
+            self.pyg.display.Info().current_h,
+        )
+        screen = self.pyg.display.set_mode(screen_size, self.pyg.FULLSCREEN)
         screen.fill((0, 0, 0))
-        font = pygame.font.Font(None, 32)
+        font = self.pyg.font.Font(None, 32)
         text_surface = font.render(self.get_text(), True, (255, 255, 255))
         # get the dimensions of the text surface
         text_width, text_height = text_surface.get_size()
@@ -46,9 +55,9 @@ class Window:
         # blit the text surface onto the center of the screen
         screen.blit(text_surface, (x, y))
         # update the display
-        pygame.display.flip()
-        self.play_sound(pygame)
+        self.pyg.display.flip()
+        self.play_sound()
 
     def close(self):
-        self.play_sound(pygame)
-        pygame.quit()
+        self.play_sound()
+        self.pyg.quit()
