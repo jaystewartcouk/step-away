@@ -14,9 +14,17 @@ This is a simple screen break program that shows you a blank screen with a physi
 - Ubuntu 22.04.2 LTS
 - Windows 10
 
-## :mag: Requirements
-- Python https://www.python.org/
-- `pip install -r requirements.txt`
+## :mag: Setup
+
+### Ubuntu
+```
+mkdir -p ~/code && cd ~/code
+git clone git@github.com:jaystewartcouk/step-away.git
+cd step-away
+pip install -r requirements.txt
+cp step_away.desktop ~/.local/share/applications/step_away.desktop
+sed -i 's#/path/to/your/#'"$HOME/code/"'#g' ~/.local/share/applications/step_away.desktop
+```
 
 ## :sunglasses: Usage
 `python step_away.py`
@@ -35,6 +43,7 @@ options:
   --long_break_length_minutes LONG_BREAK_LENGTH_MINUTES
   --delay DELAY
 ```
+
 ## :high_brightness: Configuration
 Please use the command line arguments above or `cp .env.example .env`.
 
