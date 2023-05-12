@@ -10,12 +10,12 @@ A simple screen break program which shows you a blank screen with a physical exe
 - Configure a long break interval and duration
 - System tray icon controls (Pause, Resume, Skip, Skip to long, Stop)
 
-## :warning: Warnings
-- Only tested on Ubuntu 22.04.2 LTS
+## :warning: Tested on
+- Ubuntu 22.04.2 LTS
+- Windows 10
 
 ## :mag: Requirements
 `pip install -r requirements.txt`
-`sudo apt install playerctl`
 
 ## :sunglasses: Usage
 `python main.py`
@@ -42,13 +42,11 @@ Please use the command line arguments above or `cp .env.example .env`.
 :warning: LONG_BREAK_FREQUENCY_MINUTES needs to be a multiple of SHORT_BREAK_FREQUENCY_MINUTES
 
 ## :bulb: Roadmap
-* [x] Cross-platform system tray icon and controls
 * [ ] Write tests
 * [ ] Add linters and static analyzers
-* [ ] Set up CI
 
 ## :green_heart: Credits
-- "bird-whistling.wav" by InspectorJ (https://www.jshaw.co.uk/) of https://freesound.org/
+- wooderpecker.wav and bird-whistling.wav by InspectorJ (https://www.jshaw.co.uk/) of https://freesound.org/
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
 - Inspired by [Safe Eyes](https://github.com/slgobinath/SafeEyes)
 
