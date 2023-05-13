@@ -50,11 +50,12 @@ options:
 Please use the command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
-* [ ] Add Skip button to break screen
+* [ ] Skip button on break screen
+* [ ] Break notification before break
 * [ ] Write tests
 * [ ] Add linters and static analyzers
 * [ ] Add settings window
-* [ ] Add next break time in tray
+* [ ] Add next break countdown in tray
 * [ ] Internationalization
 * [ ] Package for Python
 * [ ] Distribute in DEB Format
