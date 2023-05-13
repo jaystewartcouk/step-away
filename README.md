@@ -54,6 +54,9 @@ Please use the command line arguments above or `cp .env.example .env`.
 * [ ] Add linters and static analyzers
 * [ ] Add settings window
 * [ ] Add next break time in tray
+* [ ] Internationalization
+* [ ] Package for Python
+* [ ] Distribute in DEB Format
 
 ## :green_heart: Credits
 - wooderpecker.wav and bird-whistling.wav by InspectorJ (https://www.jshaw.co.uk/) of https://freesound.org/
