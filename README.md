@@ -50,10 +50,14 @@ options:
 Please use the command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
+* [ ] Add Skip button to break screen
 * [ ] Write tests
 * [ ] Add linters and static analyzers
 * [ ] Add settings window
 * [ ] Add next break time in tray
+* [ ] Internationalization
+* [ ] Package for Python
+* [ ] Distribute in DEB Format
 
 ## :green_heart: Credits
 - Exercises by University Health Service of [University of Michigan](https://uhs.umich.edu/computerergonomics)
