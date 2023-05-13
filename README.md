@@ -50,6 +50,7 @@ options:
 Please use the command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
+* [ ] Add Skip button to break screen
 * [ ] Write tests
 * [ ] Add linters and static analyzers
 * [ ] Add settings window
