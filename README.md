@@ -51,6 +51,7 @@ options:
 Please use the command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
+* [ ] Fix 'Program not responding error' in Ubuntu
 * [ ] Skip button on break screen
 * [ ] Break notification before break
 * [ ] Write tests
