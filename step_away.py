@@ -54,9 +54,10 @@ class StepAway(Base):
 
         seconds_worked = 0
         while True and self.tray.stop_flag is False:
-            self.log.info(f"Seconds worked: {seconds_worked}")
+            if seconds_worked > 0:
+                self.log.info(f"Worked {int(seconds_worked/60)} minutes")
 
-            # Work time
+            # Screen time
             self.show_progress_bar(self.config.WORK_DURATION)
             seconds_worked += self.config.WORK_DURATION
 
