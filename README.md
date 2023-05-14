@@ -1,4 +1,5 @@
 [![Build Status](https://app.travis-ci.com/jaystewartcouk/step-away.svg?branch=main)](https://app.travis-ci.com/jaystewartcouk/step-away)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # :radioactive: Step Away!
 "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective.
@@ -50,11 +51,13 @@ options:
 Please use the command line arguments above or `cp .env.example .env`.
 
 ## :bulb: Roadmap
-* [ ] Add Skip button to break screen
+* [ ] Fix 'Program not responding error' in Ubuntu
+* [ ] Skip button on break screen
+* [ ] Break notification before break
 * [ ] Write tests
 * [ ] Add linters and static analyzers
 * [ ] Add settings window
-* [ ] Add next break time in tray
+* [ ] Add next break countdown in tray
 * [ ] Internationalization
 * [ ] Package for Python
 * [ ] Distribute in DEB Format
