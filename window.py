@@ -10,9 +10,6 @@ class Window:
     exercise_file = "exercises.json"
     sound_file = "sound.wav"
 
-    def __init__(self) -> None:
-        self.pyg.init()
-
     def get_file_path(self, file):
         current_dir = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(current_dir, file)
@@ -39,6 +36,7 @@ class Window:
         return text
 
     def open(self):
+        self.pyg.init()
         screen_size = (
             self.pyg.display.Info().current_w,
             self.pyg.display.Info().current_h,
