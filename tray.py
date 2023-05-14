@@ -11,6 +11,7 @@ class Tray:
     skip_flag = False
     skip_to_long_flag = False
     stop_flag = False
+    restart_flag = False
     exit_flag = False
     tools = None
 
@@ -36,6 +37,9 @@ class Tray:
     def stop(self, icon, item):
         self.stop_flag = True
 
+    def restart(self, icon, item):
+        self.restart_flag = True
+
     def get_file_path(self, file):
         current_dir = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(current_dir, file)
@@ -52,6 +56,7 @@ class Tray:
             pystray.MenuItem("Skip", self.skip),
             pystray.MenuItem("Skip to long", self.skip_to_long),
             pystray.MenuItem("Stop", self.stop),
+            pystray.MenuItem("Restart", self.restart),
         )
 
         # Define a function to run in a separate thread

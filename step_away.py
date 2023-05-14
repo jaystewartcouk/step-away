@@ -12,6 +12,7 @@ import platform
 class StepAway(Base):
     window = None
     tray = None
+    seconds_worked = 0
 
     def __init__(self) -> None:
         super().__init__()
@@ -40,9 +41,7 @@ class StepAway(Base):
                 # update the progress bar every second
                 while self.tray.pause_flag is True:
                     pass
-                if self.tray.stop_flag is True:
-                    break
-                if self.tray.skip_flag is True:
+                if self.tray.skip_flag | self.tray.restart_flag | self.tray.stop_flag:
                     self.tray.skip_flag = False
                     break
                 pbar.update(1)
@@ -52,31 +51,36 @@ class StepAway(Base):
         if self.config.DELAY > 0:
             self.take_break(self.config.DELAY)
 
-        seconds_worked = 0
         while True and self.tray.stop_flag is False:
-            if seconds_worked > 0:
-                self.log.info(f"Worked {int(seconds_worked/60)} minutes")
+            if self.seconds_worked > 0:
+                self.log.info(f"Worked {int(self.seconds_worked/60)} minutes")
 
             # Screen time
             self.show_progress_bar(self.config.WORK_DURATION)
-            seconds_worked += self.config.WORK_DURATION
+            if self.tray.stop_flag is True:
+                break
+            elif self.tray.restart_flag is True:
+                self.seconds_worked = 0
+                self.tray.restart_flag = False
+                continue
 
-            if self.tray.stop_flag is False:
-                if self.tray.skip_to_long_flag is True:
-                    is_long_break = True
-                    self.tray.skip_to_long_flag = False
-                else:
-                    # true when seconds_worked is a multiple of LONG_BREAK_FREQUENCY_SECONDS
-                    is_long_break = (
-                        seconds_worked % self.config.LONG_BREAK_FREQUENCY_SECONDS == 0
-                    )
+            self.seconds_worked += self.config.WORK_DURATION
 
-                # Break time
-                self.take_break(
-                    self.config.LONG_BREAK_LENGTH_SECONDS
-                    if is_long_break
-                    else self.config.SHORT_BREAK_LENGTH_SECONDS
+            if self.tray.skip_to_long_flag is True:
+                is_long_break = True
+                self.tray.skip_to_long_flag = False
+            else:
+                # true when self.seconds_worked is a multiple of LONG_BREAK_FREQUENCY_SECONDS
+                is_long_break = (
+                    self.seconds_worked % self.config.LONG_BREAK_FREQUENCY_SECONDS == 0
                 )
+
+            # Break time
+            self.take_break(
+                self.config.LONG_BREAK_LENGTH_SECONDS
+                if is_long_break
+                else self.config.SHORT_BREAK_LENGTH_SECONDS
+            )
 
 
 def main():
