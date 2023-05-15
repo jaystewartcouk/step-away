@@ -1,7 +1,7 @@
 [![Build Status](https://app.travis-ci.com/jaystewartcouk/step-away.svg?branch=main)](https://app.travis-ci.com/jaystewartcouk/step-away)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-# :radioactive: Step Away!
+# :radioactive: Step Away! (just another screen break app)
 "Step away" typically means to physically remove oneself from a situation or environment in order to take a break, clear one's head, or gain perspective.
 
 This is a simple screen break program that shows you a blank screen with a physical exercise to remind you to take breaks and move.
